@@ -1,74 +1,74 @@
-<html>
-	<head>
-		<title>My Awesome Page</title>
-			<script type="text/javascript" charset="utf-8"> 
+  <html>
+  <head>
+    <title>My Awesome Page</title>
+    <script type="text/javascript" charset="utf-8"> 
             //this version allows you to click on text and color the image of a cell.  
-				function changeStyle(selectorText, styleProperty, propertyValue){
-					var theRules = new Array(); 
-						if (document.styleSheets[0].cssRules) { 
-            	theRules = document.styleSheets[0].cssRules; 
-            } 
-            else if (document.styleSheets[0].rules) { 
-            	theRules = document.styleSheets[0].rules; 
-            }
-	      		else{
-            	alert("No Stylesheet Present");}
+            function changeStyle(selectorText, styleProperty, propertyValue){
+             var theRules = new Array(); 
+             if (document.styleSheets[0].cssRules) { 
+               theRules = document.styleSheets[0].cssRules; 
+             } 
+             else if (document.styleSheets[0].rules) { 
+               theRules = document.styleSheets[0].rules; 
+             }
+             else{
+               alert("No Stylesheet Present");}
 
-            for (n in theRules) {
-							if (theRules[n].selectorText === selectorText) {
-			   				var theStyleProperties = theRules[n].style;
-								console.log(theStyleProperties.fill);
-								if(theStyleProperties.fill !== "#ffffff"){
-									console.log("I changed to white.");
-									theStyleProperties.setProperty(styleProperty, "#ffffff", 'important');
-							  }	
-								else{	
-									console.log("I changed color");
-                	theStyleProperties.setProperty(styleProperty,propertyValue, 'important'); 
-								}
-              }     
-            }
-						mixColors(theRules)
-	     }
-			 function mixColors(theRules){
-					num_magenta_dots = 0;
-					num_cyan_dots = 0;
-					num_yellow_dots = 0;
-			 for (var i = 1; i<= 9; i++){ 
-					primary_color = theRules[i].selectorText.substr(7,2);
-					if (primary_color === 'ma'){
-						if (theRules[i].style.fill !== "#ffffff"){
-							num_magenta_dots += 1;
-						}
-					}
-					else if(primary_color === 'ye'){
-						if (theRules[i].style.fill !== "#ffffff"){
-							num_yellow_dots += 1;
-						}
+               for (n in theRules) {
+                 if (theRules[n].selectorText === selectorText) {
+                  var theStyleProperties = theRules[n].style;
+                  console.log(theStyleProperties.fill);
+                  if(theStyleProperties.fill !== "#ffffff"){
+                   console.log("I changed to white.");
+                   theStyleProperties.setProperty(styleProperty, "#ffffff", 'important');
+                 }	
+                 else{	
+                   console.log("I changed color");
+                   theStyleProperties.setProperty(styleProperty,propertyValue, 'important'); 
+                 }
+               }     
+             }
+             mixColors(theRules)
+           }
+           function mixColors(theRules){
+             num_magenta_dots = 0;
+             num_cyan_dots = 0;
+             num_yellow_dots = 0;
+             for (var i = 1; i<= 9; i++){ 
+               primary_color = theRules[i].selectorText.substr(7,2);
+               if (primary_color === 'ma'){
+                if (theRules[i].style.fill !== "#ffffff"){
+                 num_magenta_dots += 1;
+               }
+             }
+             else if(primary_color === 'ye'){
+              if (theRules[i].style.fill !== "#ffffff"){
+               num_yellow_dots += 1;
+             }
 
-					}
-					else if (primary_color === 'cy'){
-						if (theRules[i].style.fill !== "#ffffff"){
-							num_cyan_dots += 1;
-						}
-					}
-				}
-				console.log("Magenta: " + num_magenta_dots + " Yellow: " + num_yellow_dots + " Cyan: " + num_cyan_dots);
+           }
+           else if (primary_color === 'cy'){
+            if (theRules[i].style.fill !== "#ffffff"){
+             num_cyan_dots += 1;
+           }
+         }
+       }
+       console.log("Magenta: " + num_magenta_dots + " Yellow: " + num_yellow_dots + " Cyan: " + num_cyan_dots);
 
-				var cyan = num_cyan_dots/3;
-				var magenta = num_magenta_dots/3;
-				var yellow = num_yellow_dots/3;
+       var cyan = num_cyan_dots/3;
+       var magenta = num_magenta_dots/3;
+       var yellow = num_yellow_dots/3;
 
-				var red = Math.floor(255 * (1 - cyan));
-				var green = Math.floor(255 * (1 - magenta));
-				var blue = Math.floor(255 * (1 - yellow));
-				console.log("Red: " + red + " Green: " + green + " Blue: " + blue);
+       var red = Math.floor(255 * (1 - cyan));
+       var green = Math.floor(255 * (1 - magenta));
+       var blue = Math.floor(255 * (1 - yellow));
+       console.log("Red: " + red + " Green: " + green + " Blue: " + blue);
 
-				
-				theRules[10].style.setProperty("fill","rgb(" + red + ", " + green + ", " + blue + ")");
+       
+       theRules[10].style.setProperty("fill","rgb(" + red + ", " + green + ", " + blue + ")");
 
-			
-			
+       
+       
 				/**
 			
 				var total_red = 0;
@@ -92,71 +92,71 @@
 				
 				**/
 			}
-    </script> 
+      </script> 
     </head>
     <body>
- 
-<svg xmlns="http://www.w3.org/2000/svg" version="1.1" x = "0px" y = "0px">
-	<style type="text/css" >
-      <![CDATA[
+     
+      <svg xmlns="http://www.w3.org/2000/svg" version="1.1" x = "0px" y = "0px">
+       <style type="text/css" >
+       <![CDATA[
 
-        circle {
-           opacity:1; 
-           fill:black; 
-           stroke:rgb(0,0,0); 
-           stroke-width:3.000000; 
-           stroke-linecap:round; 
-           stroke-linejoin:round; 
-           stroke-miterlimit:10;
-        }
- 				circle.magenta33 { 
-           fill:#FFFFFF; 
-        }
-  
-        circle.magenta66{
+       circle {
+         opacity:1; 
+         fill:black; 
+         stroke:rgb(0,0,0); 
+         stroke-width:3.000000; 
+         stroke-linecap:round; 
+         stroke-linejoin:round; 
+         stroke-miterlimit:10;
+       }
+       circle.magenta33 { 
+         fill:#FFFFFF; 
+       }
+       
+       circle.magenta66{
         fill:#FFFFFF;
-        }
-        
-        circle.magenta100{
+      }
+      
+      circle.magenta100{
         fill:#FFFFFF;
-        }
-        circle.cyan33{
+      }
+      circle.cyan33{
         fill:#FFFFFF;
-        }
-        circle.cyan66{
+      }
+      circle.cyan66{
         fill:#FFFFFF;
-        }
-				circle.cyan100{
+      }
+      circle.cyan100{
         fill:#FFFFFF;
-        }
-        circle.yellow33{
+      }
+      circle.yellow33{
         fill:#FFFFFF;
-        }
-				circle.yellow66{
+      }
+      circle.yellow66{
         fill:#FFFFFF;
-        }
-				circle.yellow100{
+      }
+      circle.yellow100{
         fill:#FFFFFF;
-        } 
-				circle.result{
-				fill:#FFFFFF;
-				}
+      } 
+      circle.result{
+        fill:#FFFFFF;
+      }
       ]]>
-    </style>
+      </style>
 
 
-  <circle class="magenta100" 	 cx="100" cy="50"  r="40" onclick="changeStyle('circle.magenta100', 	'fill', '#FF00FF')"/>
-	<circle class="yellow100" cx="200" cy="50"  r="40" onclick="changeStyle('circle.yellow100', 'fill', '#FFFF00')"/>
-	<circle class="cyan100"	 cx="300" cy="50"  r="40" onclick="changeStyle('circle.cyan100', 	'fill', '#00FFFF')"/> 
-	<circle class="magenta66"    cx="100" cy="150" r="40" onclick="changeStyle('circle.magenta66', 		'fill', '#FF00FF')"/> 
-	<circle class="yellow66"  cx="200" cy="150" r="40" onclick="changeStyle('circle.yellow66', 	'fill', '#FFFF00')"/> 
-	<circle class="cyan66"   cx="300" cy="150" r="40" onclick="changeStyle('circle.cyan66', 	'fill', '#00FFFF')"/> 
-	<circle class="magenta33"    cx="100" cy="250" r="40" onclick="changeStyle('circle.magenta33',		'fill', '#FF00FF')"/> 
-	<circle class="yellow33"  cx="200" cy="250" r="40" onclick="changeStyle('circle.yellow33', 	'fill', '#FFFF00')"/> 
-	<circle class="cyan33"   cx="300" cy="250" r="40" onclick="changeStyle('circle.cyan33', 	'fill', '#00FFFF')"/> 
+      <circle class="magenta100" 	 cx="100" cy="50"  r="40" onclick="changeStyle('circle.magenta100', 	'fill', '#FF00FF')"/>
+      <circle class="yellow100" cx="200" cy="50"  r="40" onclick="changeStyle('circle.yellow100', 'fill', '#FFFF00')"/>
+      <circle class="cyan100"	 cx="300" cy="50"  r="40" onclick="changeStyle('circle.cyan100', 	'fill', '#00FFFF')"/> 
+      <circle class="magenta66"    cx="100" cy="150" r="40" onclick="changeStyle('circle.magenta66', 		'fill', '#FF00FF')"/> 
+      <circle class="yellow66"  cx="200" cy="150" r="40" onclick="changeStyle('circle.yellow66', 	'fill', '#FFFF00')"/> 
+      <circle class="cyan66"   cx="300" cy="150" r="40" onclick="changeStyle('circle.cyan66', 	'fill', '#00FFFF')"/> 
+      <circle class="magenta33"    cx="100" cy="250" r="40" onclick="changeStyle('circle.magenta33',		'fill', '#FF00FF')"/> 
+      <circle class="yellow33"  cx="200" cy="250" r="40" onclick="changeStyle('circle.yellow33', 	'fill', '#FFFF00')"/> 
+      <circle class="cyan33"   cx="300" cy="250" r="40" onclick="changeStyle('circle.cyan33', 	'fill', '#00FFFF')"/> 
 
-	<circle class="result"	 cx="450" cy="150" r="40"/>
-</svg>
+      <circle class="result"	 cx="450" cy="150" r="40"/>
+    </svg>
 
-</body>
-</html>
+  </body>
+  </html>
